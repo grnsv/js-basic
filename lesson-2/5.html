@@ -5,6 +5,78 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="5.js"></script>
+    <script>
+        'use strict';
+
+        /**
+         * Функция складывает переданные параметры.
+         * @param {number} a
+         * @param {number} b
+         * @returns {number}
+         */
+        function add(a, b) {
+            return a + b;
+        }
+
+        /**
+         * Функция из параметра "а" вычитает параметр "b".
+         * @param {number} a
+         * @param {number} b
+         * @returns {number}
+         */
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        /**
+         * Функция делит параметр "a" на параметр "b".
+         * @param {number} a
+         * @param {number} b
+         * @returns {number}
+         */
+        function divide(a, b) {
+            return a / b;
+        }
+
+        /**
+         * Функция умножает параметры.
+         * @param {number} a
+         * @param {number} b
+         * @returns {number}
+         */
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        /**
+         * Функция получает два числа и осуществляет над ними математическу операцию.
+         * @param {number} arg1
+         * @param {number} arg2
+         * @param {string} operation может быть "+", "-", "/", "*".
+         * @throws {Error} если передана не предусмотренная операция, то будет
+         * выброшена ошибка.
+         * @returns {number}
+         */
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return add(arg1, arg2);
+                case "-":
+                    return subtract(arg1, arg2);
+                case "/":
+                    return divide(arg1, arg2);
+                case "*":
+                    return multiply(arg1, arg2);
+                default:
+                    throw new Error("Операция " + operation + " не предусмотрена");
+            }
+        }
+
+        console.log(mathOperation(3, 5, "+"));
+        console.log(mathOperation(3, 5, "-"));
+        console.log(mathOperation(3, 5, "/"));
+        console.log(mathOperation(3, 5, "*"));
+        console.log(mathOperation(3, 5, "lorem"));
+    </script>
 </body>
 </html>
