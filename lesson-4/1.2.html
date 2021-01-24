@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    function PostES5(author, text, date) {
+      this.author = author;
+      this.text = text;
+      this.date = date;
+    }
+    PostES5.prototype.edit = function(text) {
+      this.text = text;
+    };
+
+    function AttachedPostES5(author, text, date) {
+      PostES5.call(this, author, text, date);
+      this.highlighted = false;
+    }
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
+    AttachedPostES5.prototype.makeTextHighlighted = function() {
+      this.highlighted = true;
+    };
+
+    class PostES6 {
+      constructor(author, text, date) {
+        this.author = author;
+        this.text = text;
+        this.date = date;
+      }
+      edit(text) {
+        this.text = text;
+      }
+    }
+
+    class AttachedPostES6 extends PostES6 {
+      constructor(author, text, date) {
+        super(author, text, date);
+        this.highlighted = false;
+      }
+      makeTextHighlighted() {
+        this.highlighted = true;
+      }
+    }
+  </script>
+</body>
+</html>
