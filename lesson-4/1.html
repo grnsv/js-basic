@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script>
+    'use strict';
+    
+    console.log(createObjFromInt(+prompt("Введите число от 0 до 999")));
+
+    function createObjFromInt(int) {
+      let result = {};
+
+      if ( !Number.isInteger(int) || int < 0 || int > 999 ) {
+        console.log("число было передано вне [0, 999] диапазона, не целое число или вообще не число");
+      } else {
+        result.hundreds = Math.floor(int/100);
+        int = int % 100;
+        result.tens = Math.floor(int/10);
+        result.units = int % 10;
+      }
+
+      return result;
+    }
+  </script>
+</body>
+</html>
