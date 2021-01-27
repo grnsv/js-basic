@@ -16,7 +16,13 @@
     и выведите их в консоль. -->
 
     <script>
-        
+        for (let elem of document.getElementsByClassName("one")) {
+            console.dir(elem);
+        }
+
+        [].forEach.call(document.getElementsByClassName("one"), function(elem){
+            console.dir(elem);
+        });
     </script>
 </body>
 </html>

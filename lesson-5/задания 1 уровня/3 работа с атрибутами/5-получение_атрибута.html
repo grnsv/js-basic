@@ -16,7 +16,9 @@
     и aria-label с помощью метода getAttribute. -->
 
     <script>
-        
+        document.querySelectorAll("[data-dismiss], [aria-label]").forEach(function(elem) {
+            console.log(elem.getAttribute("data-dismiss"), elem.getAttribute("aria-label"));
+        });
     </script>
 </body>
 

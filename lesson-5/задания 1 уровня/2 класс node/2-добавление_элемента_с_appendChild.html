@@ -16,7 +16,9 @@
     -->
 
     <script>
-
+        let child = document.createElement("h3");
+        document.getElementsByTagName("DIV")[0].appendChild(child);
+        child.outerHTML = "<h3>hello world</h3>";
     </script>
 </body>
 </html>
