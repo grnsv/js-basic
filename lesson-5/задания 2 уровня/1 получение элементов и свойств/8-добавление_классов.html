@@ -19,7 +19,11 @@
     -->
 
     <script>
-        
+        for (let elem of document.getElementsByTagName('B')) {
+            if (!elem.classList.contains('sign')) {
+                elem.classList.add('sign');
+            }
+        }
     </script>
 </body>
 </html>

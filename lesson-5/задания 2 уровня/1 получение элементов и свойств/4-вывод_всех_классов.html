@@ -16,7 +16,11 @@
      -->
 
     <script>
-        
+        let div = document.getElementsByTagName('DIV')[0];
+        let classes = div.classList;
+        classes.forEach(className => {
+            console.log(className);
+        });
     </script>
 </body>
 </html>

@@ -24,7 +24,9 @@
     объект события, передаваемый в функцию-обработчик клика. -->
 
     <script>
-        
+        document.getElementsByTagName('UL')[0].addEventListener('click', event => {
+            console.dir(event.target);
+        });
     </script>
 </body>
 </html>

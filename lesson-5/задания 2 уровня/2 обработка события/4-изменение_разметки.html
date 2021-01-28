@@ -23,5 +23,11 @@
     для этого вышеописанную разметку пишите в виде строки в innerHTML.
     -->
 
+    <script>
+        let product = document.getElementsByClassName('product')[0];
+        product.addEventListener('click', event => {
+            product.innerHTML = '<div>Другой товар</div>\n<div>Другое описание</div>';
+        });
+    </script>
 </body>
 </html>
