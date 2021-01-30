@@ -41,7 +41,14 @@
     -->
 
     <script>
-        
+        document.querySelectorAll(".product>button").forEach(button => {
+            button.addEventListener("click", buttonClickHandler);
+        });
+
+        function buttonClickHandler(event) {
+           event.target.parentNode.style.background = "lightgreen";
+           event.target.textContent = "Добавлено";
+        }
     </script>
 </body>
 </html>

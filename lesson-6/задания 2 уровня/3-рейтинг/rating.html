@@ -31,23 +31,32 @@
     -->
 
     <script>
-        let firstStar = document.getElementById('first');
-        let secondStar = document.getElementById('second');
-        let thirdStar = document.getElementById('third');
-        let fourthStar = document.getElementById('fourth');
-        let fifthStar = document.getElementById('fifth');
+        // let firstStar = document.getElementById('first');
+        // let secondStar = document.getElementById('second');
+        // let thirdStar = document.getElementById('third');
+        // let fourthStar = document.getElementById('fourth');
+        // let fifthStar = document.getElementById('fifth');
 
         let goldenClass = 'golden';
+        let stars = document.getElementsByClassName("fa-star");
 
-        firstStar.addEventListener('mouseover', function() {
-            if (!firstStar.classList.contains('goldenClass')) {
-                firstStar.classList.add(goldenClass);
-            }
-        });
-
-        firstStar.addEventListener('mouseout', function() {
-            firstStar.classList.remove(goldenClass);
-        });
+        for (let star of stars) {
+            star.addEventListener('mouseover', function() {
+                for (let i = 0; i < stars.length; i++) {
+                    if (!stars[i].classList.contains(goldenClass)) {
+                        stars[i].classList.add(goldenClass);
+                    }
+                    if (stars[i] == this) break;
+                }
+            });
+            star.addEventListener('mouseout', function() {
+                for (let i = 0; i < stars.length; i++) {
+                    if (stars[i].classList.contains(goldenClass)) {
+                        stars[i].classList.remove(goldenClass);
+                    }
+                }
+            });
+        };
     </script>
 </body>
 </html>

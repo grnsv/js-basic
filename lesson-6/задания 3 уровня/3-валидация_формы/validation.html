@@ -36,7 +36,18 @@
      -->
 
     <script>
-        
+        let formEl = document.getElementsByTagName("form")[0],
+            first = document.getElementById("first"),
+            second = document.getElementById("second");
+
+        formEl.addEventListener("submit", event => {
+            for (let elem of formEl.getElementsByTagName("input")) {
+                if (elem.value == "") {
+                    elem.style.borderColor = "red";
+                    event.preventDefault();
+                }
+            }
+        });
     </script>
 </body>
 </html>

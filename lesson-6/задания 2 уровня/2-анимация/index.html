@@ -23,7 +23,13 @@
     -->
 
     <script>
-        
+        let btn = document.getElementsByTagName('button')[0],
+            msg = document.getElementsByClassName('message')[0];
+
+        btn.addEventListener("click", event => {
+            msg.style.display = "block";
+            msg.classList.add("animate__animated", "animate__fadeInLeftBig");
+        });
     </script>
 </body>
 </html>
