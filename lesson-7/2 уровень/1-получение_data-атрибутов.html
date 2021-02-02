@@ -20,7 +20,14 @@
     -->
 
     <script>
-        
+        'use strict';
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', event => {
+                for (let key in event.target.dataset) {
+                    console.dir(event.target.dataset[key]);
+                }
+            });
+        });
     </script>
 </body>
 </html>

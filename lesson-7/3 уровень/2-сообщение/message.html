@@ -26,7 +26,14 @@
     -->
 
     <script>
-        
+        'use strict';
+        let audioElement = new Audio('notification.mp3'),
+            messageElement = document.getElementsByClassName('message')[0];
+
+        document.getElementsByTagName('button')[0].addEventListener('click', () => {
+            audioElement.play();
+            messageElement.style.transform = `translateY(-${messageElement.clientHeight}px)`;
+        })
     </script>
 </body>
 
